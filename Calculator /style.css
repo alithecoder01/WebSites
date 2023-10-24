@@ -1,0 +1,262 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    background-image: url(img/v1016-c-08_1-ksh6mza3.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav{
+    position: relative;
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav a{
+    position: relative;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    margin-right: 40px;
+}
+
+.nav .navMenu a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+.nav a:hover:after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.logo{
+    font-size: 20px;
+    margin-left: 22px;
+    color:lightsteelblue;
+}
+
+.midText{
+    position: relative;
+    top: 25rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.openCalc{
+    margin-top: 20px;
+    height: 5rem;
+    width: 11rem;
+    color: lightsteelblue;
+    font-size: 20px;
+    background-color: transparent;
+    border: 1.5px solid white;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.openCalc:hover{
+    background-color: white;
+    color: black;
+    
+}
+
+
+.container{
+    display: none;
+    width: 100%;
+    margin-top: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0);
+    transition: transform 0.5s ease ,width 0.2s ease;
+    
+}
+
+.container.active{
+    transform: scale(1);
+    transition: transform 0.2s ease;
+}
+
+.calculator{
+    background: #a8b4df;
+    backdrop-filter: blur(8px);
+    padding: 15px;
+    border-radius: 10px;
+    
+}
+
+
+.icon-close{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-bottom-left-radius: 20px;
+    font-size: 32px;
+    color: #303030;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.icon-close i {
+    margin-left: 5px;
+    margin-bottom: 2px;
+    font-size: 20px;
+}
+
+
+div input{
+    margin:10px;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1), 5px 5px 15px rgba(0, 0, 0, 0.2);
+    background: #a8b4df;
+    font-size: 20px;
+}
+
+form .display {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+}
+
+.inputDisplay{
+    flex: 1;
+    text-align: right;
+    font-size: 45px;
+    box-shadow: none;
+}
+
+.equl{
+    width: 145px;
+}
+
+.barsIcon{
+    display: none;
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    right: 2rem;
+    cursor:pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 25px;
+    height: 2px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: translate(0, 5px) rotate(-45deg);
+}
+  
+.change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+.reducedMenu div a{
+    position: relative;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+.reducedMenu{
+    display: none;
+    position: absolute;
+     top: 80px;
+    right: 25px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter:blur(10px) ;
+    border-radius: 15px;
+    width: 300px;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.2s ;
+}
+
+.reducedMenu div{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.reducedMenu a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+}
+.reducedMenu a:hover:after{
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.reducedMenu.open{
+    height: 270px;
+    transition: 0.2s;
+}
+
+
+@media (max-width :990px) {
+    .navMenu{
+        display: none;
+    }
+    .barsIcon{
+        display: block;
+    }
+    .reducedMenu{
+        display: block;
+    }
+}
+
+@media (max-width : 300px) {
+    .reducedMenu{
+        left: 30px;
+        width: unset;
+    }
+}

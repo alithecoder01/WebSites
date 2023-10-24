@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <title>Calculator</title>
+</head>
+<body>
+
+    <div class="nav">
+
+        <div class="logo">
+            <h1>Calculator</h1>
+        </div>
+
+        <div class="navMenu">
+            <a href="#">Home</a>
+            <a href="#">Contact</a>
+            <a href="#">About</a>
+            <a href="#">Back</a>
+        </div>
+
+        <div class="barsIcon">
+            <div class="bars">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+              </div>
+        </div>
+        
+    </div>
+
+   
+    <div class="reducedMenu">
+        <div><a href="#">Home </a> </div>
+        <div><a href="#">Contact</a> </div>
+        <div><a href="#">About</a> </div>
+        <div><a href="#">Back</a> </div>
+    </div>
+
+
+    <div class="midText">
+        <h1>
+            Hello to our Calculator
+            
+        </h1>
+        <div class="opencal">
+            <button class="openCalc">
+            Open Calculator
+            </button>
+        </div>
+        
+    </div>
+
+    <div class="container">
+        <div class="calculator">
+            <form>
+
+                <div class="icon-close">
+                    <i class="fa fa-close"></i>
+                </div>
+
+                <div class="display">
+                    <input type="text" name="inputDisplay" class="inputDisplay">
+                </div>
+
+                <div>
+                    <input type="button" value="AC" onclick="inputDisplay.value = ''">
+                    <input type="button" value="DEL" onclick="inputDisplay.value = inputDisplay.value.toString().slice(0,-1)" >
+                    <input type="button" value="." onclick="inputDisplay.value += '.'">
+                    <input type="button" value="÷" onclick="inputDisplay.value += '/'">
+                </div>
+                <div>
+                    <input type="button" value="7" onclick="inputDisplay.value += '7'">
+                    <input type="button" value="8" onclick="inputDisplay.value += '8'">
+                    <input type="button" value="9" onclick="inputDisplay.value += '9'">
+                    <input type="button" value="x" onclick="inputDisplay.value += '*'">
+                </div>
+
+                <div>
+                    <input type="button" value="4" onclick="inputDisplay.value += '4'">
+                    <input type="button" value="5" onclick="inputDisplay.value += '5'">
+                    <input type="button" value="6" onclick="inputDisplay.value += '6'">
+                    <input type="button" value="-" onclick="inputDisplay.value += '-'">
+                </div>
+                
+                <div>
+                    <input type="button" value="1" onclick="inputDisplay.value += '1'">
+                    <input type="button" value="2" onclick="inputDisplay.value += '2'">
+                    <input type="button" value="3" onclick="inputDisplay.value += '3'">
+                    <input type="button" value="+" onclick="inputDisplay.value += '+'">
+                </div>
+
+                <div>
+                    <input type="button" value="00" onclick="inputDisplay.value += '00'">
+                    <input type="button" value="0" onclick="inputDisplay.value += '0'">
+                    <input type="button" value="=" class="equl" onclick="inputDisplay.value = eval(inputDisplay.value)">
+                    
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
